@@ -1,8 +1,18 @@
 ---
-import Welcome from "@components/Welcome.astro";
-import Layout from "@layouts/Layout.astro";
+import Welcome from "@components/Welcome.astro"
+import Layout from "@layouts/Layout.astro"
+import ProductCard from "@components/ProductCard.astro"
+import { playlists } from "@lib/data.ts"
 ---
 
 <Layout title="Catálogo Digital">
-  <Welcome />
+  <div id="container_catalog" class="relative transition-all duration-100 overflow-y-scroll
+    max-w-screen-xl  items-center justify-center mx-auto ">
+    <div>
+      <Welcome />
+      <div id="catalog" class="flex flex-wrap mt-2 gap-4 px-2">
+        { playlists.map((playlist) => <ProductCard playlist = {playlist} />) }
+      </div>
+    </div>
+  </div>
 </Layout>
