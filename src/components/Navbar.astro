@@ -18,14 +18,13 @@ const links = [
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
     <div class="gap-1 flex w-fit items-center ">
       <div class="w-fit">
-        <a
+        <button
           id="menu-button"
-          href="#"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="menu-open"
         >
           <Menu />
-        </a>
+        </button>
       </div>
       <a href="/" class="text-2xl font-bold text-blue-600">Catálogo Digital</a>
     </div>
@@ -60,6 +59,7 @@ const links = [
 </header>
 
 <script>
+  function setupMenu() {
   const menuButton = document.querySelector("#menu-button")
   const menu = document.querySelector("#menu-open")
 
@@ -75,5 +75,8 @@ const links = [
       menu?.classList.remove("translate-x-0")
     }
   })
+}
+setupMenu()
+document.addEventListener('astro:after-swap', setupMenu);
 </script>
   
