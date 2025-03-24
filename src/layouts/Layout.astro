@@ -1,7 +1,7 @@
 ---
 import Navbar from "@components/Navbar.astro";
 import Footer from "@components/Footer.astro";
-
+import "@styles/global.css";
 interface Props {
   title: string
 }
@@ -18,7 +18,7 @@ const {title} = Astro.props
 		<title>{title}</title>
 	</head>
 	<body>
-	  <div id="app" class="relative h-screen gap-2">
+	  <div id="app" class="relative h-screen ">
 		<div class="[grid-area:menu]">
 		  <Navbar />
 		</div>
@@ -39,7 +39,7 @@ const {title} = Astro.props
 			"menu"
 			"main"
 			"footer";
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: 100px 1fr auto;
 		height: 100%;
 	}
 	html,
