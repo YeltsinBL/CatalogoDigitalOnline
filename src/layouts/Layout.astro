@@ -1,3 +1,8 @@
+---
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,11 +13,30 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+	  <div id="app" class="relative h-screen gap-2">
+		<div class="[grid-area:menu]">
+		  <Navbar />
+		</div>
+		<main class="[grid-area:main]">
+		  <slot />
+		</main>
+		<footer class="[grid-area:footer]">
+		  <Footer />
+		</footer>
+	  </div>
 	</body>
 </html>
 
 <style>
+	#app {
+		display: grid;
+		grid-template-areas:
+			"menu"
+			"main"
+			"footer";
+		grid-template-rows: auto 1fr auto;
+		height: 100%;
+	}
 	html,
 	body {
 		margin: 0;
