@@ -1,0 +1,74 @@
+---
+import AlertCircle from "@icons/AlertCircle.astro"
+import Card from "@icons/Card.astro"
+import Headset from "@icons/Headset.astro"
+import Inicio from "@icons/Inicio.astro"
+import Menu from "@icons/Menu.astro"
+import Package from "@icons/Package.astro"
+
+const links = [
+  { name: "Inicio", href: "/", icon : Inicio },
+  { name: "Productos", href: "/producto", icon : Package},
+  { name: "Sobre Nosotros", href: "/about", icon : AlertCircle },
+  { name: "Contacto", href: "/contacto", icon : Headset },
+]
+---
+
+<header class="bg-white shadow-md fixed w-full top-0 z-50">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+    <div class="gap-1 flex w-fit items-center ">
+      <div class="w-fit">
+        <a
+          id="menu-button"
+          href="#"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          aria-controls="menu-open"
+        >
+          <Menu />
+        </a>
+      </div>
+      <a href="/" class="text-2xl font-bold text-blue-600">Catálogo Digital</a>
+    </div>
+
+    <div class="pr-2">
+      <Card />
+    </div>
+
+    <div class="w-full rounded-3xl bg-gray-100 p-2 border-2 border-gray-200">
+      <input type="text" class="w-full bg-gray-100 focus:outline-none" placeholder="Buscar productos" />
+    </div>
+
+    <nav 
+      id="menu-open"  
+      class="absolute top-[85px] left-0  w-auto lg:w-[328px]  -translate-x-full  duration-[0.3s] "
+    >
+      <div class="flex flex-col p-4 mt-4 font-medium bg-gray-200">
+        {links.map((link) => (
+
+          <a href={link.href} class="flex items-center gap-2 text-2xl text-gray-700 hover:text-blue-500 transition p-2">
+            <link.icon />
+            {link.name}</a>
+        ))}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuButton = document.querySelector("#menu-button")
+  const menu = document.querySelector("#menu-open")
+
+  menuButton?.addEventListener("click", () => {
+    menu?.classList.remove("-translate-x-full")
+    menu?.classList.remove("hidden")
+    menu?.classList.add("translate-x-0")
+  })
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node
+    if (!menu?.contains(target) && !menuButton?.contains(target)) {
+      menu?.classList.add("-translate-x-full")
+      menu?.classList.remove("translate-x-0")
+    }
+  })
+</script>
+  
