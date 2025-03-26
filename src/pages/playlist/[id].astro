@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro"
-import { allPlaylists } from "@lib/data.ts"
+import { playlists } from "@lib/data.ts"
 
 
 const {id} = Astro.params
 
-const playlist = allPlaylists.find(playlist => playlist.id === id)
+const playlist = id ? playlists.find(playlist => playlist.id === parseInt(id)): null
 ---
 
 <Layout title="Catálogo Digital">
@@ -14,7 +14,7 @@ const playlist = allPlaylists.find(playlist => playlist.id === id)
     transition:name=`playlist ${id} box`>
     <header class="flex flex-row gap-6 p-4 mt-10">
       <picture class="aspect-square w-52 flex-none">
-        <img src={playlist?.cover} alt={playlist?.title} 
+        <img src={playlist?.image} alt={playlist?.title} 
           class="object-cover w-full h-full shadow-lg" 
           transition:name=`playlist ${playlist?.id} image`/>
       </picture>
@@ -28,8 +28,8 @@ const playlist = allPlaylists.find(playlist => playlist.id === id)
         </div>
         <div class="flex-1 flex items-end">
           <div class="text-sm  font-normal">
-            <div transition:name=`playlist ${playlist?.id} artists`>
-              <span>{playlist?.artists.join(", ")}</span>
+            <div transition:name=`playlist ${id} category`>
+              <span>{playlist?.category}</span>
             </div>
             <p class="mt-1">
                 <span class="text-black">$30</span>

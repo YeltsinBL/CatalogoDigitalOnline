@@ -7,8 +7,7 @@ interface Props {
 }
 
 const { playlist } = Astro.props
-const {id, cover, title, artists, color} = playlist
-const artistsString = artists.join(", ")
+const {id, image, title, category, price} = playlist
 
 ---
 <article class="group relative hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 rounded-md 
@@ -22,7 +21,7 @@ const artistsString = artists.join(", ")
     transition:name=`playlist ${id} box`
     >
     <picture class="aspect-square w-full h-auto flex-none">
-      <img src={cover} alt={title} 
+      <img src={image} alt={title} 
       class="object-cover w-full h-full rounded-md" 
       transition:name=`playlist ${id} image`/>
     </picture>
@@ -31,8 +30,8 @@ const artistsString = artists.join(", ")
       transition:name=`playlist ${id} title`
       >{title}</h4>
       <span class="text-gray-460"
-      transition:name=`playlist ${id} artists`
-      >{artistsString}</span>
+      transition:name=`playlist ${id} category`
+      >{category}</span>
     </div>
   </a>
 </article>
