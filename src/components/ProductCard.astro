@@ -11,7 +11,8 @@ const {id, cover, title, artists, color} = playlist
 const artistsString = artists.join(", ")
 
 ---
-<article class="group relative hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 rounded-md ">
+<article class="group relative hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 rounded-md 
+  transition-all duration-300">
   <div class=`absolute right-3 bottom-24 translate-y-0 z-10` >
     <CardBuyButton id={id} client:load/>
   </div>
