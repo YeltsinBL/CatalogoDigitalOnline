@@ -17,7 +17,8 @@ export default defineConfig({
         "@assets": "/src/assets",
         "@styles": "/src/styles",
         "@icons": "/src/icons",
-        "@lib": "/src/lib"
+        "@lib": "/src/lib",
+        "@store": "/src/store"
       }
     }
   },
