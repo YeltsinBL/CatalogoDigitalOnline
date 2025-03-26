@@ -1,10 +1,10 @@
 ---
 import AlertCircle from "@icons/AlertCircle.astro"
-import Card from "@icons/Card.astro"
 import Headset from "@icons/Headset.astro"
 import Inicio from "@icons/Inicio.astro"
 import Menu from "@icons/Menu.astro"
 import Package from "@icons/Package.astro"
+import { CardBasketButon } from "./CardBasketButon"
 
 const links = [
   { name: "Inicio", href: "/", icon : Inicio },
@@ -30,12 +30,7 @@ const links = [
     </div>
 
     <div class="pr-2">
-      <div class="relative">
-        <Card />
-        <div class="absolute bg-gray-300 rounded-full h-6 text-center -right-2 -top-2.5 text-sm  p-0.5 font-semibold">
-          0
-        </div>
-      </div>
+      <CardBasketButon client:load />
     </div>
 
     <div class="w-full rounded-3xl bg-gray-100 p-2 border-2 border-gray-200">

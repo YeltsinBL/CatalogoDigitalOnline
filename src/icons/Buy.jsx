@@ -10,3 +10,10 @@ export const Minus = () => (
     <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
     <g id="SVGRepo_iconCarrier"> <g> <path d="M15.167,30.334c-8.362,0-15.166-6.805-15.166-15.167C0.001,6.804,6.805,0,15.167,0c8.361,0,15.166,6.804,15.166,15.167 C30.333,23.529,23.528,30.334,15.167,30.334z M15.167,4C9.01,4,4.001,9.009,4.001,15.167S9.01,26.334,15.167,26.334 s11.166-5.009,11.166-11.167S21.324,4,15.167,4z M24.824,15.167c0-1.657-1.343-3-3-3H8.509c-1.657,0-3,1.343-3,3 c0,1.656,1.343,3,3,3h13.315C23.481,18.167,24.824,16.823,24.824,15.167z"></path> </g> </g></svg>
 )
+export const Basket = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shopping-cart">
+    <circle cx="8" cy="21" r="1"/>
+    <circle cx="19" cy="21" r="1"/>
+    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+  </svg>
+)
