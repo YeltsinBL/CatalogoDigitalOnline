@@ -1,37 +1,39 @@
 ---
-import { type Playlist } from "@lib/data"
+import { type Productlist } from "@lib/data"
 import { CardBuyButton } from "./CardBuyButton"
 
 interface Props {
-  playlist: Playlist
+  productlist: Productlist
 }
 
-const { playlist } = Astro.props
-const {id, image, title, category, price} = playlist
+const { productlist } = Astro.props
+const {id, image, title, category, price} = productlist
 
 ---
 <article class="group relative hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 rounded-md 
   transition-all duration-300">
   <div class=`absolute right-3 bottom-24 translate-y-0 z-10` >
-    <CardBuyButton id={id} client:load/>
+    <CardBuyButton id={id} name={title} price={price} client:load/>
   </div>
-  <a href={`/playlist/${id}`} 
+  <a href={`/product/${id}`} 
     class="transition-all duration-300 flex relative p-2 overflow-hidden gap-2 pb-6
       w-44 flex-col"
-    transition:name=`playlist ${id} box`
+    transition:name=`productlist ${id} box`
     >
     <picture class="aspect-square w-full h-auto flex-none">
       <img src={image} alt={title} 
       class="object-cover w-full h-full rounded-md" 
-      transition:name=`playlist ${id} image`/>
+      transition:name=`productlist ${id} image`/>
     </picture>
     <div class="flex flex-auto flex-col text-white px-2">
       <h4 class="font-bold text-sm"
-      transition:name=`playlist ${id} title`
+      transition:name=`productlist ${id} title`
       >{title}</h4>
       <span class="text-gray-460"
-      transition:name=`playlist ${id} category`
+      transition:name=`productlist ${id} category`
       >{category}</span>
+      <span class="text-gray-460 font-bold"
+      transition:name=`productlist ${id} price` >${price}</span>
     </div>
   </a>
 </article>
