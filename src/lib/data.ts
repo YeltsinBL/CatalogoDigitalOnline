@@ -1,6 +1,4 @@
-import { colors } from "./colors"
-
-export interface Playlist {
+export interface Productlist {
   id: number
   title: string
   price: number
@@ -9,7 +7,7 @@ export interface Playlist {
   image: string
 }
 
-export const playlists: Playlist[] = [
+export const productlists: Productlist[] = [
   {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
