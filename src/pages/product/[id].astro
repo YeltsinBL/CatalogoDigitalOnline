@@ -1,0 +1,14 @@
+---
+import Layout from "@layouts/Layout.astro"
+import { ProductDetail } from "@components/ProductDetail"
+
+const {id} = Astro.params
+---
+
+<Layout title="Catálogo Digital">
+  <div id="container_catalog" class="relative transition-all duration-100 overflow-y-scroll bg-gray-100 
+    max-w-screen-xl h-full items-center justify-center mx-auto "
+    transition:name=`productlist ${id} box`>
+    <ProductDetail id={id} client:load />
+  </div>
+</Layout>
