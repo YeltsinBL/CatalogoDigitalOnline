@@ -2,7 +2,7 @@
 import Welcome from "@components/Welcome.astro"
 import Layout from "@layouts/Layout.astro"
 import ProductCard from "@components/ProductCard.astro"
-import { playlists } from "@lib/data.ts"
+import { productlists } from "@lib/data.ts"
 ---
 
 <Layout title="Catálogo Digital">
@@ -11,7 +11,7 @@ import { playlists } from "@lib/data.ts"
     <div>
       <Welcome />
       <div id="catalog" class="flex flex-wrap mt-2 gap-4 px-2">
-        { playlists.map((playlist) => <ProductCard playlist = {playlist} />) }
+        { productlists.map((productlist) => <ProductCard productlist = {productlist} />) }
       </div>
     </div>
   </div>
