@@ -1,0 +1,10 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { ProductsTable } from "@components/ProductsTable";
+---
+
+<Layout title="Catálogo Digital">
+  <div class="max-w-screen-xl mx-auto py-4 px-8 h-full bg-white overflow-y-scroll">
+    <ProductsTable client:load />
+  </div>
+</Layout>
