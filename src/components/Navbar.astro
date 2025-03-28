@@ -4,7 +4,7 @@ import Headset from "@icons/Headset.astro"
 import Inicio from "@icons/Inicio.astro"
 import Menu from "@icons/Menu.astro"
 import Package from "@icons/Package.astro"
-import { CardBasketButon } from "./CardBasketButon"
+import { CardBasketButton } from "./CardBasketButton"
 
 const links = [
   { name: "Inicio", href: "/", icon : Inicio },
@@ -29,9 +29,9 @@ const links = [
       <a href="/" class="text-2xl font-bold text-blue-600">Catálogo Digital</a>
     </div>
 
-    <div class="pr-2">
-      <CardBasketButon client:load />
-    </div>
+    <a href="/proforma"  class="pr-2">
+      <CardBasketButton client:load />
+    </a>
 
     <div class="w-full rounded-3xl bg-gray-100 p-2 border-2 border-gray-200">
       <input type="text" class="w-full bg-gray-100 focus:outline-none" placeholder="Buscar productos" />
