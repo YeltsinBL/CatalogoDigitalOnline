@@ -1,9 +1,9 @@
 import { Basket } from "@icons/Buy"
 import { useCartInitializer, useCartStore } from "@store/cartStore"
 
-export function CardBasketButon() {
+export function CardBasketButton() {
   useCartInitializer()
-  const { cart } = useCartStore()
+  const { cart } = useCartStore()  
   return (
     <div className="relative">
       <Basket />
