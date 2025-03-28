@@ -63,7 +63,7 @@ export function ProductDetail({ id }) {
             <p className="mt-1">
               <span className="text-black font-bold">${product?.price}</span>
             </p>
-            <CardBuyButton principal={false} id={product?.id} name={product?.title} price={product?.price} />
+            <CardBuyButton principal={false} product={product} />
           </div>
           </div>
         </div>
