@@ -10,14 +10,14 @@ const { productlist } = Astro.props
 const {id, image, title, category, price} = productlist
 
 ---
-<article class="group relative hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 rounded-md 
-  transition-all duration-300 hover:scale-105 ">
+<article class="relative shadow-lg hover:shadow-xl bg-zinc-500/30 rounded-md 
+  transition-all duration-300 hover:scale-110 ">
   <div class=`absolute right-3  top-2 z-10` >
     <CardBuyButton product={productlist} client:load/>
   </div>
   <a href={`/product/${id}`} 
     class="transition-all duration-300 flex relative p-2 overflow-hidden gap-2 pb-6
-      w-44 flex-col hover:text-white h-full "
+      w-44 flex-col  h-full "
     transition:name=`productlist ${id} box`
     >
     <picture class="aspect-square w-full h-60 flex-none">
