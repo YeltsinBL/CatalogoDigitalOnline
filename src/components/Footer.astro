@@ -1,1 +1,22 @@
-<div class="bg-gray-100">Footer</div>
+---
+import Github from '@assets/github.svg'
+import LinkedIn from '@assets/linkedin.svg'
+---
+
+<footer class="bg-gray-900 text-white py-2 w-full">
+  <div class="max-w-screen-xl flex flex-wrap items-center mx-auto justify-evenly px-3">
+    <p class="text-sm">
+      &copy; 2025 Desarrollado por <strong>Yeltsin Baltodano </strong>.  
+    </p>
+    <div class="flex gap-4 ">
+      <a href="https://github.com/YeltsinBL" target="_blank"
+        class="hover:scale-110 transition-colors duration-300">
+        <Github size={24} />
+      </a>
+      <a href="https://www.linkedin.com/in/guillermo-yeltsin-baltodano-le%C3%B3n-86938413b/" target="_blank" 
+        class="hover:scale-110 transition-colors duration-300">
+        <LinkedIn size={24} />
+      </a>
+    </div>
+  </div>
+</footer>
