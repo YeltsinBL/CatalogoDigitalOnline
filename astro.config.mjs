@@ -7,6 +7,11 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   output:'server',
+  experimental: {
+    svg:{
+      mode: 'sprite'
+    }
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
